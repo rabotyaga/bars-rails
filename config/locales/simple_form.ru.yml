@@ -1,0 +1,51 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательно'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Пожалуйста исправьте ошибки:"
+    labels:
+      defaults:
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'
+      user:
+        new:
+          email: 'E-mail'
+          remember_me: 'Запомнить меня'
+        edit:
+          email: 'E-mail'
+      article:
+        nr: "#"
+        is_root: "Открывает новую статью"
+        root: "Корень"
+        ar_inf_wo_vowels: "Без огласовок"
+        ar_inf: "Ар. слово"
+        is_original: "Из словаря Х.К.Баранова"
+        source: "Источник"
+        page: "Страница"
+        form: "Порода глагола"
+        opt: "Опции"
+        translation: "Перевод"
+        notes: "Примечения"
+    hints:
+      defaults:
+        # username: 'User name to sign in.'
+        # password: 'No special characters, please.'
+      article:
+        is_root: "Поставьте галочку, если данное слово открывает новую словарную статью; уберите, если оно является подстатьей и продолжает ранее открытую статью"
+        is_original: "Поставьте галочку, если данная статья взята из словаря Х. К. Баранова"
+        source: "Иначе укажите источник (напр.: Лисан аль-араб)"
+        ar_inf_wo_vowels: "Это поле будет обновлено автоматически"
+        opt: "Например, огласовка средней корневой; или номер при омонимии"
+    placeholders:
+      user:
+        email: 'Ваш e-mail'
+        password: "******"
+        password_confirmation: "******"

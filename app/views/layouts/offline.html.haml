@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title Арабско-русский словарь Баранова
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag "dataTables/jquery.dataTables"
+    = javascript_include_tag "dataTables/jquery.dataTables.bootstrap"
+    = javascript_include_tag "offline/dataTables.ext.fnDisplayRowN"
+    = csrf_meta_tags
+  %body
+    %header.navbar.navbar-fixed-top
+      %nav.navbar-inner
+        .container
+          %a.brand Арабско-русский словарь Баранова
+    %main{:role => "main"}
+      .container
+        .content
+          .row
+            .span12
+              = render 'layouts/messages'
+              = yield
+          %footer

@@ -1,0 +1,60 @@
+@import "bootstrap";
+body { padding-top: 60px; }
+@import "bootstrap-responsive";
+
+.nav > li > a {
+  font-size: 18px;
+}
+
+.nav > li.small-font > a {
+  font-size: 14px;
+}
+
+.nav > li.red-text > a, .nav > li.active.red-text > a {
+  color: #b94a48;
+  &:hover {
+    color: #662323;
+  }
+}
+
+.nav > li.green-text > a, .nav > li.active.green-text > a {
+  color: #468847;
+  &:hover {
+    color: #236623;
+  }
+}
+
+.pagination {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+input.search-box {
+  font-size: 32px;
+  line-height: 38px;
+  height: 38px;
+  width: 400px;
+}
+
+input.ar {
+  font-size: 24px;
+  height: 26px;
+}
+
+table td.ar {
+  font-size: 24px;
+}
+table td.ar p.transcription {
+  font-size: 16px;
+  font-style: italic;
+  padding-top: 5px;
+}
+table td {
+  font-size: 16px;
+}
+table.table-condensed td {
+  padding: 8px 5px 0px 5px;
+}
+table.with-footer {
+  margin-bottom: 80px;
+}

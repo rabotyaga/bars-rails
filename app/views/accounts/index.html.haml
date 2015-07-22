@@ -1,0 +1,24 @@
+= javascript_include_tag "accounts", "data-turbolinks-track" => true
+%table.table.table-striped.table-bordered.table-hover
+  %thead
+    %tr
+      %th= t(:email)
+      %th= t(:is_admin)
+      %th= t(:active)
+      %th= t(:can_edit)
+      %th= t(:can_add)
+      %th= t(:can_delete)
+  %tbody
+    - @users.each do |user|
+      %tr{ :class => user.is_admin? ? "success" : "" }
+        %td= user.email
+        %td
+          = check_box_tag "user[is_admin]", 1, user.is_admin, { 'data-href' => account_path(user), 'disabled' => true }
+        %td
+          = check_box_tag "user[active]", 1, user.active, { 'data-href' => account_path(user), 'disabled' => (user == current_user) }
+        %td
+          = check_box_tag "user[can_edit]", 1, user.can_edit, { 'data-href' => account_path(user) }
+        %td
+          = check_box_tag "user[can_add]", 1, user.can_add, { 'data-href' => account_path(user) }
+        %td
+          = check_box_tag "user[can_delete]", 1, user.can_delete, { 'data-href' => account_path(user) }

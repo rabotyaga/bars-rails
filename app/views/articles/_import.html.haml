@@ -1,0 +1,6 @@
+
+%br/
+= link_to 'New Article', new_article_path
+= form_tag import_articles_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import"

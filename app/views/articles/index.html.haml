@@ -1,0 +1,44 @@
+.navbar-fixed-top2
+  %ul.nav.nav-pills
+    - @first_letters.each do |fl|
+      %li{ :class => (params[:first_letter_id].to_i == fl.id ? 'active' : '') }
+        = link_to fl.letter, articles_path(:first_letter_id => fl.id)
+%h3
+  = @articles.first.root
+%p.muted
+  = @articles.first.source_link
+%table.table.table-striped.table-bordered.table-hover.table-condensed.with-footer
+  %thead
+    %tr
+      %th= t(:ar_inf)
+      %th{ :colspan => 4 }
+      %th= t(:translation)
+      - if current_user.try(:can_any)
+        %th
+  %tbody
+    - @all_articles.each do |article|
+      %tr{ :class => (@article == article ? 'success' : (article.is_original ? '' : 'info')) }
+        %td.ar
+          = article.ar_inf
+          %p.transcription= article.transcription
+        %td= article.form
+        %td= article.vocalization
+        %td= article.opts
+        %td= article.homonym_nr
+        %td
+          = simple_format(article.translation)
+          - if !article.is_original? && !article.source_link.blank?
+            %p.muted.text-right
+              = article.source_link
+        - if current_user.try(:can_any)
+          %td
+            - if current_user.can_edit
+              = link_to t(:edit), edit_article_path(article), class: "btn btn-small btn-info"
+            - if current_user.can_add
+              = link_to t(:add), new_article_path(:after_id => article.id), class: "btn btn-small btn-success"
+            - if current_user.can_delete
+              = link_to t(:delete), article_path(article), method: :delete, data: { confirm: t(:are_you_sure?)}, class: "btn btn-small btn-danger"
+%header.navbar.navbar-fixed-bottom
+  %nav.navbar-inner
+    .container
+      = paginate @articles

@@ -1,0 +1,28 @@
+%table.table.table-striped.table-bordered.table-hover.table-condensed.with-footer
+  %thead
+    %tr
+      %th= t(:root)
+      %th= t(:ar_inf)
+      %th{ :colspan => 4 }
+      %th= t(:translation)
+  %tbody
+    - @articles.each do |article|
+      %tr{ :class => (params[:q] == article.ar_inf_wo_vowels ? 'success' : (article.is_original ? '' : 'info')) }
+        %td.ar
+          = link_to article.root, articles_path(:id => article.root_id)
+        %td.ar
+          = link_to article.ar_inf, articles_path(:id => article.id)
+          %p.transcription= article.transcription
+        %td= article.form
+        %td= article.vocalization
+        %td= article.opts
+        %td= article.homonym_nr
+        %td
+          = simple_format(article.translation)
+          - if article.is_original.nil?
+            %p.muted.text-right
+              = t(:source) + article.source
+%header.navbar.navbar-fixed-bottom
+  %nav.navbar-inner
+    .container
+      = paginate @articles

@@ -1,0 +1,13 @@
+%h2
+  = t(:sign_up)
+%p.text-error
+  Внимание! Регистрация необходима только в том случае, если вы собираетесь иметь доступ на запись, т.е. изменять/дополнять словарь. Доступ на чтение регистрации не требует. Если вы уверены, что вам необходим доступ на запись, то после прохождения регистрации и подтверждения e-mail адреса напишите кто вы и для чего именно вам необходим доступ на запись на адрес ra.dictionary@gmail.com.
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :email, :required => true, :autofocus => true
+    = f.input :password, :required => true
+    = f.input :password_confirmation, :required => true
+  .form-actions
+    = f.button :submit, t(:sign_up)
+= render "devise/shared/links"

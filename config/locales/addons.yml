@@ -1,0 +1,102 @@
+ru:
+  search: "Поиск"
+  browse_dictionary: "Листать словарь"
+  search_for: "Введите слово для поиска:"
+  ruar: "Искать русское слово"
+  arru: "Искать арабское слово"
+  search_options: "Настройки поиска"
+  do_search: "Найти"
+  search_any: "Искать любое вхождение"
+  search_exact: "Искать точное совпадение"
+
+  root: "Корень"
+  ar_inf_wo_vowels: "Без огласовок"
+  ar_inf: "Ар. слово"
+  translation: "Перевод"
+  edit: "Изменить"
+  add: "Добавить"
+  delete: "Удалить"
+
+  alphabet: "Алфавит"
+  about: "О проекте"
+  manage_accounts: "Управление пользователями"
+  logs: "Журнал изменений"
+
+  source: "Источник: "
+  page: "стр. "
+
+  email: "E-mail"
+  active: "Активирован"
+  is_admin: "Администратор"
+  can_edit: "Может редактировать существующие статьи"
+  can_add: "Может добавлять новые статьи"
+  can_delete: "Может удалять статьи"
+
+  date: "Дата"
+  action: "Действие"
+  article: "Статья"
+  data: "Данные"
+
+  additional_fields: "Дополнительные поля"
+
+  article_created: "Статья успешно добавлена"
+  article_updated: "Статья успешно сохранена"
+
+  views:
+    pagination:
+      next: "След ›"
+      last: "Посл »"
+      previous: "‹ Пред"
+      first: "« Перв"
+  activerecord:
+    attributes:
+      user:
+        confirmation_token: ""
+        reset_password_token: ""
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "Введите ваш текущий пароль"
+              invalid: "Пароль указан неверно"
+            password:
+              blank: "Введите пароль"
+              too_short: "Пароль слишком короткий (мин. 8 символов)"
+            password_confirmation:
+              confirmation: "Введите подтверждение пароля"
+            email:
+              blank: "Введите ваш email"
+              invalid: "E-mail указан неверно"
+              taken: "Аккаунт с таким e-mail уже есть"
+            confirmation_token:
+              invalid: "Неверный код подтверждения"
+            reset_password_token:
+              invalid: "Неверная ссылка замены пароля"
+  sign_in: "Войти"
+  sign_up: "Зарегистрироваться"
+  sign_out: "Выйти"
+  forgot_your_password?: "Забыли пароль?"
+  didnt_recieve_confirmation_instructions?: "Не получили ссылку для подтверждения?"
+  didnt_receive_unlock_instructions?: "Не получили инструкции по разблокировке?"
+  sign_in_with: "Войти с помощью "
+  send_me_reset_password_instructions: "Выслать инструкции по смене пароля"
+  resend_confirmation_instructions: "Выслать ссылку для подтверждения"
+  change_your_password: "Замена пароля"
+  change_my_password: "Поменять пароль"
+  new_password: "Новый пароль"
+  confirm_your_new_password: "Подтверждение нового пароля"
+  resend_unlock_instructions: "Выслать инструкции по разблокировке"
+  edit_account: "Редактирование аккаунта"
+  leave_it_blank_if_you_dont_want_to_change_it: "оставьте пустым, если не хотите менять"
+  we_need_your_current_password_to_confirm_your_changes: "для изменения аккаунта необходимо указать текущий пароль"
+  save: "Сохранить"
+  cancel_my_account: "Удалить мой аккаунт"
+  back: "Назад"
+  are_you_sure?: "Вы уверены?"
+
+  helpers:
+    submit:
+      article:
+        update: "Сохранить"
+        create: "Создать"

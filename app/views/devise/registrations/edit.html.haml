@@ -1,0 +1,19 @@
+%h2
+  = t(:edit_account)
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :email, :required => true, :autofocus => true
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %p
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    = f.input :password, :autocomplete => "off", :hint => t(:leave_it_blank_if_you_dont_want_to_change_it), :required => false, :label => t(:new_password)
+    = f.input :password_confirmation, :required => false
+    = f.input :current_password, :hint => t(:we_need_your_current_password_to_confirm_your_changes), :required => true
+  .form-actions
+    = f.button :submit, t(:save)
+%h3
+  = t(:cancel_my_account)
+%p
+  #{link_to t(:cancel_my_account), registration_path(resource_name), :data => { :confirm => t(:are_you_sure?) }, :method => :delete}
+= link_to t(:back), :back

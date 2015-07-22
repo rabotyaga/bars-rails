@@ -1,0 +1,76 @@
+#ra-keyboard {
+  width:630px;
+  line-height:20px;
+  font-size:1em;
+}
+.ra-key,#ra-backspace,#ra-tab,#ra-k25,#ra-caps-lock,#ra-enter,#ra-left-shift,#ra-right-shift,#ra-space,#ra-left-ctrl,#ra-right-ctrl,#ra-left-alt,#ra-right-alt,#ra,#ra-escape {
+  float:left;
+  display:block;
+  margin:1px;
+  height:3em;
+  line-height:2.75em;
+  text-align:center;
+  color:gray;}
+.ra-key {
+  width:40px;
+}
+#ra-backspace {
+  width:78px;
+}
+#ra-tab {
+  width:62px;
+}
+#ra-k25 {
+  width:56px;
+}
+#ra-caps-lock {
+  width:76px;
+}
+#ra-enter {
+  width:84px;
+}
+#ra-left-shift {
+  width:46px;
+}
+#ra-right-shift {
+  width:114px;
+}
+#ra-space {
+  width:246px;
+  text-align:center;
+}
+#ra-right-ctrl,#ra-right-alt,#ra-escape {
+  width:62px;
+}
+#ra-left-ctrl,#ra-left-alt,#ra {
+  width:60px;
+}
+.ra-label-reference {
+  color:gray;
+  font-size:.9em;
+  line-height:12px;
+  text-align:left;
+  cursor:default;
+}
+.ra-label-natural {
+  margin-top:-5px;
+  color:#e0115f;
+  font-size:1.5em;
+  line-height:20px;
+  text-align:center;
+  cursor:default;
+}
+.ra-label-shift {
+  margin-top:-5px;
+  color:#057cb5;
+  font-size:1.5em;
+  line-height:20px;
+  text-align:center;
+  cursor:default;
+}
+.ra-recessed span {
+  color:#3C0;
+}
+.ra-clear {
+  clear:both;
+}

@@ -1,0 +1,27 @@
+= simple_form_for @article do |f|
+  = f.error_notification
+  = f.input :nr
+  = f.input :is_root
+  = f.input :ar_inf, input_html: { class: 'ar' }
+  = f.input :ar_inf_wo_vowels, disabled: true, input_html: { class: 'ar' }
+  = f.input :is_original
+  = f.input :source
+  = f.input :page
+  = f.input :form
+  = f.input :opt
+  .accordion
+    .accordion-group
+      .accordion-heading
+        = link_to t(:additional_fields), '#collapseOne', :class => 'accordion-toggle', 'data-toggle' => 'collapse', 'data-parent' => '#accordion'
+      #collapseOne.accordion-body.collapse
+        .accordion-inner
+          = f.input :mn1
+          = f.input :ar1, input_html: { class: 'ar' }
+          = f.input :mn2
+          = f.input :ar2, input_html: { class: 'ar' }
+          = f.input :mn3
+          = f.input :ar3, input_html: { class: 'ar' }
+  = f.input :translation
+  - if params[:after_id]
+    = hidden_field_tag 'after_id', params[:after_id]
+  = f.button :submit, :class => 'btn-primary'

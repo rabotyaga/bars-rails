@@ -1,0 +1,40 @@
+%p#notice= notice
+%p
+  %strong Nr:
+  = @article.nr
+%p
+  %strong Ar inf:
+  = @article.ar_inf
+%p
+  %strong Form:
+  = @article.form
+%p
+  %strong Opt:
+  = @article.opt
+%p
+  %strong Mn1:
+  = @article.mn1
+%p
+  %strong Ar1:
+  = @article.ar1
+%p
+  %strong Mn2:
+  = @article.mn2
+%p
+  %strong Ar2:
+  = @article.ar2
+%p
+  %strong Mn3:
+  = @article.mn3
+%p
+  %strong Ar3:
+  = @article.ar3
+%p
+  %strong Translation:
+  = simple_format(@article.translation)
+%p
+  %strong Notes:
+  = simple_format(@article.notes)
+= link_to 'Edit', edit_article_path(@article)
+|
+= link_to 'Back', articles_path
