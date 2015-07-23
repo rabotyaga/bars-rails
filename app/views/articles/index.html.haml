@@ -38,7 +38,5 @@
               = link_to t(:add), new_article_path(:after_id => article.id), class: "btn btn-small btn-success"
             - if current_user.can_delete
               = link_to t(:delete), article_path(article), method: :delete, data: { confirm: t(:are_you_sure?)}, class: "btn btn-small btn-danger"
-%header.navbar.navbar-fixed-bottom
-  %nav.navbar-inner
-    .container
-      = paginate @articles
+%nav
+  = paginate @articles

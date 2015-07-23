@@ -18,8 +18,5 @@
 //= require jquery-ui/menu
 //= require jquery_ujs
 //= require turbolinks
-//=  require bootstrap
-// require bootstrap-collapse
-// require bootstrap-dropdown
-// require bootstrap-alert
+//=  require bootstrap-sprockets
 //= require_self

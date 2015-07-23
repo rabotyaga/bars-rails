@@ -1,30 +1,31 @@
 = stylesheet_link_tag    "ra-keyboard", media: "all", "data-turbolinks-track" => true
 = javascript_include_tag "ra-keyboard", "data-turbolinks-track" => true
-.text-center.row-fluid
-  .offset3.span6.text-left
+.text-center.row
+  .col-md-6.col-md-offset-3.text-left
     :markdown
       **[Версия для Android](https://play.google.com/store/apps/details?id=ru.rabotyaga.baranov) обновлена:**
-      
+
         * добавлены транскрипции;
         * добавлена возможность перелистывания словаря по корням вперед/назад;
         * результаты поиска сортируются по релевантности;
         * упрощен поиск для хамзованных букв: при вводе простого алифа находится также алиф-мадда, алиф-хамза; при вводе вав находится также и вав-хамза; при вводе алиф-максура находится также и йа-хамза;
         * корректировки в базе данных: исправление опечаток, порядка слов;
         * поиск стал работать быстрее.
-  .offset3.span6
+  .col-md-6.col-md-offset-3
     = form_tag("/search", method: "get") do
-      = label_tag(:q, t(:search_for))
-      = text_field_tag(:q, nil, class: 'search-box', dir: 'rtl', id: 'search_box')
-      = submit_tag(t(:do_search), class: 'btn btn-info')
+      .input-group.input-group-lg
+        = text_field_tag(:q, nil, class: 'form-control search-box', dir: 'rtl', id: 'search_box', placeholder: t(:search_for))
+        %span.input-group-btn
+          = submit_tag(t(:do_search), class: 'btn btn-info')
       = hidden_field_tag :input_lang, params[:input_lang]
       = hidden_field_tag :search_type, params[:search_type]
-
-    .accordion
-      .accordion-group
-        .accordion-heading
+    %br
+    #accordion.panel-group
+      .panel.panel-default
+        .panel-heading
           = link_to t(:search_options), '#collapseOne', :class => 'accordion-toggle', 'data-toggle' => 'collapse', 'data-parent' => '#accordion'
-        #collapseOne.accordion-body.collapse
-          .accordion-inner
+        #collapseOne.panel-collapse.collapse
+          .panel-body
             %label.radio
               = radio_button_tag 'arru', 'arru', true
               = t(:arru)

@@ -1,11 +1,11 @@
-%ul.nav
+%ul.nav.navbar-nav
   %li{ :class => (params[:controller] == "alphabet" ? 'active' : '') }
     = link_to t(:alphabet), alphabet_index_path
   %li{ :class => (params[:controller] == "index" ? 'active' : '') }
     = link_to t(:search), root_path
   %li{ :class => (params[:controller] == "articles" ? 'active' : '') }
     = link_to t(:browse_dictionary), articles_path
-%ul.nav.pull-right
+%ul.nav.navbar-nav.navbar-right
   - if user_signed_in?
     %li.dropdown.small-font.green-text{ :class => (params[:controller] == "logs" ? 'active' : '' ) }
       = link_to t(:logs), logs_path

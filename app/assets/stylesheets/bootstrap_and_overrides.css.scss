@@ -1,6 +1,9 @@
+@import "bootstrap-sprockets";
 @import "bootstrap";
-body { padding-top: 60px; }
-@import "bootstrap-responsive";
+
+body {
+  padding-top: 60px;
+}
 
 .nav > li > a {
   font-size: 18px;
@@ -29,11 +32,8 @@ body { padding-top: 60px; }
   margin-bottom: 5px;
 }
 
-input.search-box {
+input.search-box.form-control {
   font-size: 32px;
-  line-height: 38px;
-  height: 38px;
-  width: 400px;
 }
 
 input.ar {
@@ -57,4 +57,18 @@ table.table-condensed td {
 }
 table.with-footer {
   margin-bottom: 80px;
+}
+
+@media (max-width: 767px)
+{
+  body
+  {
+    padding-top: 0px;
+  }
+
+  .navbar-fixed-top
+  {
+    position: relative;
+    top: auto;
+  }
 }
