@@ -53,5 +53,8 @@ gem 'devise'
 gem 'redcarpet'
 gem 'jquery-ui-rails'
 
+gem 'puma'
+gem 'rack-timeout'
+
 gem 'rails_12factor', group: :production
 
