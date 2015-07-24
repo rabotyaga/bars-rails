@@ -10,6 +10,9 @@ Ra::Application.routes.draw do
   get 'autocomplete' => 'index#autocomplete'
   get 'googlebefcf85fb5f3958c' => 'index#googlebefcf85fb5f3958c'
 
+  get '/m/:path', to: redirect('/%{path}')
+  get '/mobile/:path', to: redirect('/%{path}')
+
   resources :alphabet, only: [:index]
   resources :about, only: [:index]
 
