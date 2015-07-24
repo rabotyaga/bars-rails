@@ -7,4 +7,5 @@
       = f.full_error :confirmation_token
       = f.input :email, :required => true, :autofocus => true
       = f.button :submit, t(:resend_confirmation_instructions)
+    %br
     = render "devise/shared/links"

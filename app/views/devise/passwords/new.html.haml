@@ -6,4 +6,5 @@
       = f.error_notification
       = f.input :email, :required => true, :autofocus => true
       = f.button :submit, t(:send_me_reset_password_instructions)
+    %br
     = render "devise/shared/links"
