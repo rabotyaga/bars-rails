@@ -11,7 +11,9 @@ Ra::Application.routes.draw do
   get 'googlebefcf85fb5f3958c' => 'index#googlebefcf85fb5f3958c'
 
   get '/m/:path', to: redirect('/%{path}')
+  get '/m/', to: redirect('/')
   get '/mobile/:path', to: redirect('/%{path}')
+  get '/mobile/', to: redirect('/')
 
   resources :alphabet, only: [:index]
   resources :about, only: [:index]
