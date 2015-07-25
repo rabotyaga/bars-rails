@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title Большой арабско-русский словарь
+    %title= content_for(:title)
     = favicon_link_tag
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = stylesheet_link_tag    "articles", media: "all", "data-turbolinks-track" => true

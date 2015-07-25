@@ -1,3 +1,4 @@
+- content_for :title, t(:root) + " " + @articles.first.root
 .navbar-fixed-top2
   %ul.nav.nav-pills
     - @first_letters.each do |fl|

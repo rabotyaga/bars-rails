@@ -23,4 +23,12 @@ module ApplicationHelper
     return '' unless Rails.env.production?
     return render 'layouts/metrika'
   end
+
+  def bidiWrap(string, ltr)
+    if ltr
+      "\u202A" + string + "\u202C"
+    else
+      "\u202B" + string + "\u202C"
+    end
+  end
 end

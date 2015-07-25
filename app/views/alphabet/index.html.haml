@@ -1,10 +1,11 @@
+- content_for :title, t(:alphabet_title)
 .text-center.row
   .col-md-6
-    %h4 Арабский алфавит
-    = image_tag("arabski1.png")
-    = image_tag("arabski2.png")
-    = image_tag("arabski3.png")
-    = image_tag("arabski4.png")
+    %h4= t(:arabic_alphabet)
+    = image_tag("arabski1.png", alt: t(:arabic_alphabet))
+    = image_tag("arabski2.png", alt: t(:arabic_alphabet))
+    = image_tag("arabski3.png", alt: t(:arabic_alphabet))
+    = image_tag("arabski4.png", alt: t(:arabic_alphabet))
   .col-md-6
-    %h4 Цифровые значения арабских букв
-    = image_tag("alphabet_n.jpg")
+    %h4= t(:numerical_values_of_arabic_letters)
+    = image_tag("alphabet_n.jpg", alt: t(:numerical_values_of_arabic_letters))

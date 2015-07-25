@@ -1,3 +1,5 @@
+- content_for :title, bidiWrap(params[:q], true) + " - " + t(:short_title) + ": " + t(:results) + @results_count
+%h5= t(:results) + @results_count
 %table.table.table-striped.table-bordered.table-hover.table-condensed.with-footer
   %thead
     %tr

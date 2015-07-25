@@ -22,6 +22,7 @@ class IndexController < ApplicationController
       req += "LIKE ?"
       param = "%#{Article.remove_vowels_n_hamza(params[:q])}%"
     end
+    @results_count = Article.where([req, param]).where(["ar_inf NOT LIKE ?", "(%)"]).count.to_s
     @articles = Article.where([req, param]).where(["ar_inf NOT LIKE ?", "(%)"]).page(params[:page])
   end
 

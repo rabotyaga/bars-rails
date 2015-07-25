@@ -1,4 +1,12 @@
 ru:
+  index_title: "БАРС: большой арабско-русский словарь с транскрипциями"
+  about_title: "О проекте"
+  alphabet_title: "Арабский алфавит"
+  arabic_alphabet: "Арабский алфавит"
+  numerical_values_of_arabic_letters: "Цифровые значения арабских букв"
+  short_title: "БАРС"
+  results: "Результатов: "
+
   search: "Поиск"
   browse_dictionary: "Листать словарь"
   search_for: "Введите слово для поиска"
