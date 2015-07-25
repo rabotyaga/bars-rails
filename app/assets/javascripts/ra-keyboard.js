@@ -312,36 +312,36 @@ ra.keyboard=function(a,b) {
   this.nativeTextbox=document.getElementById(b);
   var d=['<div id="ra-keyboard">'];
   for(var c=0;c<13;c++) {
-    d.push('<button id="ra-k',c,'" class="ra-key"></button>')
+    d.push('<button id="ra-k',c,'" class="ra-key btn btn-default"></button>')
   }
-  d.push('<button id="ra-backspace"><span>Backspace</span></button>');
+  d.push('<button id="ra-backspace" class="btn btn-default"><span>Backspace</span></button>');
   d.push('<div class="ra-clear"></div>');
-  d.push('<button id="ra-tab"><span>Tab</span></button>');
+  d.push('<button id="ra-tab" class="btn btn-default"><span>Tab</span></button>');
   for(var c=13;c<25;c++) {
-    d.push('<button id="ra-k',c,'" class="ra-key"></button>')
+    d.push('<button id="ra-k',c,'" class="ra-key btn btn-default"></button>')
   }
-  d.push('<button id="ra-k25"></button>');
+  d.push('<button id="ra-k25" class="btn btn-default"></button>');
   d.push('<div class="ra-clear"></div>');
-  d.push('<button id="ra-caps-lock"><span>Caps Lock</span></button>');
+  d.push('<button id="ra-caps-lock" class="btn btn-default"><span>Caps</span></button>');
   for(var c=26;c<37;c++) {
-    d.push('<button id="ra-k',c,'" class="ra-key"></button>')
+    d.push('<button id="ra-k',c,'" class="ra-key btn btn-default"></button>')
   }
-  d.push('<button id="ra-enter" class="ra-enter"><span>Enter</span></button>');
+  d.push('<button id="ra-enter" class="ra-enter btn btn-default"><span>Enter</span></button>');
   d.push('<div class="ra-clear"></div>');
-  d.push('<button id="ra-left-shift"><span>Shift</span></button>');
-  d.push('<button id="ra-k47" class="ra-key"></button>');
+  d.push('<button id="ra-left-shift" class="btn btn-default"><span>Shift</span></button>');
+  d.push('<button id="ra-k47" class="ra-key btn btn-default"></button>');
   for(var c=37;c<47;c++) {
-    d.push('<button id="ra-k',c,'" class="ra-key"></button>')
+    d.push('<button id="ra-k',c,'" class="ra-key btn btn-default"></button>')
   }
-  d.push('<button id="ra-right-shift"><span>Shift</span></button>');
+  d.push('<button id="ra-right-shift" class="btn btn-default"><span>Shift</span></button>');
   d.push('<div class="ra-clear"></div>');
-  d.push('<button id="ra-left-ctrl"><span>Ctrl</span></button>');
-  d.push('<button id="ra"><span></span></button>');
-  d.push('<button id="ra-left-alt"><span>Alt</span></button>');
-  d.push('<button id="ra-space"><span>Space</span></button>');
-  d.push('<button id="ra-right-alt"><span>Alt</span></button>');
-  d.push('<button id="ra"><span></span></button>');
-  d.push('<button id="ra-right-ctrl"><span>Ctrl</span></button>');
+  d.push('<button id="ra-left-ctrl" class="btn btn-default"><span>Ctrl</span></button>');
+  d.push('<button id="ra" class="btn btn-default"><span></span></button>');
+  d.push('<button id="ra-left-alt" class="btn btn-default"><span>Alt</span></button>');
+  d.push('<button id="ra-space" class="btn btn-default"><span>Space</span></button>');
+  d.push('<button id="ra-right-alt" class="btn btn-default"><span>Alt</span></button>');
+  d.push('<button id="ra" class="btn btn-default"><span></span></button>');
+  d.push('<button id="ra-right-ctrl" class="btn btn-default"><span>Ctrl</span></button>');
   d.push('<div class="ra-clear"></div>');
   d.push("</div>");
   document.getElementById(a).innerHTML=d.join("");

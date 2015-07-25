@@ -40,7 +40,7 @@
   text-align:center;
 }
 #ra-right-ctrl,#ra-right-alt,#ra-escape {
-  width:62px;
+  width:63px;
 }
 #ra-left-ctrl,#ra-left-alt,#ra {
   width:60px;
@@ -73,4 +73,7 @@
 }
 .ra-clear {
   clear:both;
+}
+#ra-keyboard button {
+  padding:2px 6px 3px 6px;
 }
