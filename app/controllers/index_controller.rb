@@ -30,11 +30,4 @@ class IndexController < ApplicationController
     render :json => list
   end
 
-  def googlebefcf85fb5f3958c
-    render :layout => nil
-  end
-
-  def yandex_67fa1d57d47da996
-    render :layout => nil
-  end
 end
