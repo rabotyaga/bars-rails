@@ -3,3 +3,4 @@
 User-agent: *
 Allow: /
 Host: bars.org.ru
+Sitemap: http://bars.org.ru/sitemap.xml
