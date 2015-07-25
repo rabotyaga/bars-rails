@@ -13,4 +13,14 @@ module ApplicationHelper
         flash_type.to_s
     end
   end
+
+  def include_analytics
+    return '' unless Rails.env.production?
+    return render 'layouts/analytics'
+  end
+
+  def include_metrika
+    return '' unless Rails.env.production?
+    return render 'layouts/metrika'
+  end
 end
