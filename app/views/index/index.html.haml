@@ -20,48 +20,53 @@
           = submit_tag(t(:do_search), class: 'btn btn-info')
       = hidden_field_tag :input_lang, params[:input_lang]
       = hidden_field_tag :search_type, params[:search_type]
-    %br
-    #accordion.panel-group
-      .panel.panel-default
-        .panel-heading
-          = link_to t(:search_options), '#collapseOne', :class => 'accordion-toggle', 'data-toggle' => 'collapse', 'data-parent' => '#accordion'
-        #collapseOne.panel-collapse.collapse
-          .panel-body
-            %label.radio
-              = radio_button_tag 'arru', 'arru', true
-              = t(:arru)
-            %label.radio
-              = radio_button_tag 'arru', 'ruar'
-              = t(:ruar)
-            %hr
-            %label.radio
-              = radio_button_tag 'search', 'any', true
-              = t(:search_any)
-            %label.radio
-              = radio_button_tag 'search', 'exact'
-              = t(:search_exact)
+    .btn-toolbar-wrapper
+      .btn-group{role: "group", "aria-label": t(:input_lang)}
+        = button_tag t(:arru), :class => "btn btn-primary", :id => "arru"
+        = button_tag t(:ruar), :class => "btn btn-default", :id => "ruar"
+      .btn-group{role: "group", "aria-label": t(:search_mode)}
+        = button_tag t(:search_any), :class => "btn btn-primary", :id => "search_any"
+        = button_tag t(:search_exact), :class => "btn btn-default", :id => "search_exact"
     #ra-keyboard.center-block
 
 :javascript
 
-  $('#arru_ruar').click( function() {
+  $('#ruar').click( function() {
     $("#input_lang").attr("value", "ru");
-    $("#search_box").attr("dir", "ltr");
-    keyboard.onEsc();
+    keyboard.switchLayoutRu();
+    $('#arru').addClass("btn-default");
+    $('#arru').removeClass("btn-primary");
+    $('#ruar').addClass("btn-primary");
+    $('#ruar').removeClass("btn-default");
+    $('#search_box').focus();
   });
 
-  $('#arru_arru').click( function() {
+  $('#arru').click( function() {
     $("#input_lang").attr("value", "ar");
-    $("#search_box").attr("dir", "rtl");
-    keyboard.onEsc();
+    keyboard.switchLayoutAr();
+    $('#ruar').addClass("btn-default");
+    $('#ruar').removeClass("btn-primary");
+    $('#arru').addClass("btn-primary");
+    $('#arru').removeClass("btn-default");
+    $('#search_box').focus();
   });
 
   $('#search_any').click( function() {
     $("#search_type").attr("value", "any");
+    $('#search_exact').addClass("btn-default");
+    $('#search_exact').removeClass("btn-primary");
+    $('#search_any').addClass("btn-primary");
+    $('#search_any').removeClass("btn-default");
+    $('#search_box').focus();
   });
 
   $('#search_exact').click( function() {
     $("#search_type").attr("value", "exact");
+    $('#search_any').addClass("btn-default");
+    $('#search_any').removeClass("btn-primary");
+    $('#search_exact').addClass("btn-primary");
+    $('#search_exact').removeClass("btn-default");
+    $('#search_box').focus();
   });
 
   $('#search_box').autocomplete({ source: "#{autocomplete_path()}", minLength: 2 });

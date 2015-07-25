@@ -368,6 +368,18 @@ ra.keyboard.prototype.switchLayout=function() {
   this.drawKeyboard();
   this.textbox.attr("dir",this.attr("dir"))
 };
+ra.keyboard.prototype.switchLayoutRu=function() {
+  this.currentLayout=this.virtualLayout2;
+  this.reset();
+  this.drawKeyboard();
+  this.textbox.attr("dir",this.attr("dir"))
+};
+ra.keyboard.prototype.switchLayoutAr=function() {
+  this.currentLayout=this.virtualLayout;
+  this.reset();
+  this.drawKeyboard();
+  this.textbox.attr("dir",this.attr("dir"))
+};
 ra.keyboard.prototype.onEsc=function() {
   this.switchLayout();
   this.customOnEsc()
@@ -748,4 +760,10 @@ $(document).ready(function() {
   keyboard.loadVirtualLayout(a);
   keyboard.loadVirtualLayout2(b);
   $('#search_box').focus();
+  if($('#search_type').attr("value") == "exact") {
+    $('#search_exact').click();
+  }
+  if($('#input_lang').attr("value") == "ru") {
+    $('#ruar').click();
+  }
 });

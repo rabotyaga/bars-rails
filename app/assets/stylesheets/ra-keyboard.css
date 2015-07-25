@@ -2,6 +2,7 @@
   width:630px;
   line-height:20px;
   font-size:1em;
+  margin-top:20px;
 }
 .ra-key,#ra-backspace,#ra-tab,#ra-k25,#ra-caps-lock,#ra-enter,#ra-left-shift,#ra-right-shift,#ra-space,#ra-left-ctrl,#ra-right-ctrl,#ra-left-alt,#ra-right-alt,#ra,#ra-escape {
   float:left;
