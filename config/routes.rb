@@ -9,6 +9,7 @@ Ra::Application.routes.draw do
   get 'search' => 'index#search'
   get 'autocomplete' => 'index#autocomplete'
   get 'googlebefcf85fb5f3958c' => 'index#googlebefcf85fb5f3958c'
+  get 'yandex_67fa1d57d47da996' => 'index#yandex_67fa1d57d47da996'
 
   get '/m/:path', to: redirect('/%{path}')
   get '/m/', to: redirect('/')
