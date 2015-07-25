@@ -1,6 +1,5 @@
-# See http://www.robotstxt.org/wc/norobots.html for documentation on how to use the robots.txt file
-#
 User-agent: *
 Allow: /
+Disallow: /search
 Host: bars.org.ru
 Sitemap: http://bars.org.ru/sitemap.xml
