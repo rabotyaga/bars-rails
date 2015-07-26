@@ -20,13 +20,12 @@
           = submit_tag(t(:do_search), class: 'btn btn-info')
       = hidden_field_tag :input_lang, params[:input_lang]
       = hidden_field_tag :search_type, params[:search_type]
-    .btn-toolbar-wrapper
-      .btn-group{role: "group", "aria-label": t(:input_lang)}
-        = button_tag t(:arru), :class => "btn btn-primary", :id => "arru"
-        = button_tag t(:ruar), :class => "btn btn-default", :id => "ruar"
-      .btn-group{role: "group", "aria-label": t(:search_mode)}
-        = button_tag t(:search_any), :class => "btn btn-primary", :id => "search_any"
-        = button_tag t(:search_exact), :class => "btn btn-default", :id => "search_exact"
+    .btn-group{role: "group", "aria-label": t(:input_lang)}
+      = button_tag t(:arru), :class => "btn btn-primary", :id => "arru"
+      = button_tag t(:ruar), :class => "btn btn-default", :id => "ruar"
+    .btn-group{role: "group", "aria-label": t(:search_mode)}
+      = button_tag t(:search_any), :class => "btn btn-primary", :id => "search_any"
+      = button_tag t(:search_exact), :class => "btn btn-default", :id => "search_exact"
     #ra-keyboard.center-block
 
 :javascript
