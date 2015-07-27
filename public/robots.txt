@@ -1,5 +1,5 @@
 User-agent: *
-Allow: /
 Disallow: /search
+Disallow: /autocomplete
 Host: bars.org.ru
 Sitemap: http://bars.org.ru/sitemap.xml
