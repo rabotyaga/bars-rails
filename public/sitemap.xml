@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>http://bars.org.ru/alphabet/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
