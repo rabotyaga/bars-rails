@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Nr:
+  = @alphabet.nr
+%p
+  %b Letter:
+  = @alphabet.letter
+%p
+  %b Nv:
+  = @alphabet.nv
+%p
+  %b Name:
+  = @alphabet.name
+%p
+  %b Transcription:
+  = @alphabet.transcription
+%p
+  %b Ar name:
+  = @alphabet.ar_name
+%p
+  %b Ar name transcription:
+  = @alphabet.ar_name_transcription
+%p
+  %b Has all writings:
+  = @alphabet.has_all_writings
+
+= link_to 'Edit', edit_alphabet_path(@alphabet)
+\|
+= link_to 'Back', alphabets_path

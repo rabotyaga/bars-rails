@@ -1,0 +1,35 @@
+%h1 Listing alphabets
+
+%table
+  %thead
+    %tr
+      %th Nr
+      %th Letter
+      %th Nv
+      %th Name
+      %th Transcription
+      %th Ar name
+      %th Ar name transcription
+      %th Has all writings
+      %th
+      %th
+      %th
+
+  %tbody
+    - @alphabets.each do |alphabet|
+      %tr
+        %td= alphabet.nr
+        %td= alphabet.letter
+        %td= alphabet.nv
+        %td= alphabet.name
+        %td= alphabet.transcription
+        %td= alphabet.ar_name
+        %td= alphabet.ar_name_transcription
+        %td= alphabet.has_all_writings
+        %td= link_to 'Show', alphabet
+        %td= link_to 'Edit', edit_alphabet_path(alphabet)
+        %td= link_to 'Destroy', alphabet, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Alphabet', new_alphabet_path

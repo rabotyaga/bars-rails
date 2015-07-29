@@ -1,0 +1,15 @@
+= simple_form_for(@alphabet) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :nr
+    = f.input :letter
+    = f.input :nv
+    = f.input :name
+    = f.input :transcription
+    = f.input :ar_name
+    = f.input :ar_name_transcription
+    = f.input :has_all_writings
+
+  .form-actions
+    = f.button :submit

@@ -1,4 +1,7 @@
 Ra::Application.routes.draw do
+
+  #resources :alphabets
+
   devise_for :users
   resources :articles, only: [:index, :edit, :update, :new, :create, :destroy] do
     # collection { post :import }

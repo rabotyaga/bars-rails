@@ -1,12 +1,39 @@
 - content_for :title, t(:alphabet_title)
 - content_for :description, t(:alphabet_description)
 .text-center.row
-  .col-md-6
-    %h4= t(:arabic_alphabet)
-    = image_tag("arabski1.png", alt: t(:arabic_alphabet))
-    = image_tag("arabski2.png", alt: t(:arabic_alphabet))
-    = image_tag("arabski3.png", alt: t(:arabic_alphabet))
-    = image_tag("arabski4.png", alt: t(:arabic_alphabet))
-  .col-md-6
-    %h4= t(:numerical_values_of_arabic_letters)
-    = image_tag("alphabet_n.jpg", alt: t(:numerical_values_of_arabic_letters))
+  .col-md-8.col-md-offset-2
+    %h3= t(:arabic_alphabet)
+    .text-left
+      %p Арабский алфавит, арабское письмо, арабица — алфавит, используемый для записи арабского языка и (чаще всего в модифицированном виде) некоторых других языков, в частности фарси, пушту, урду и некоторых тюркских языков. Состоит из 28 букв и используется для письма справа налево.
+      %p Каждая из 28 букв, кроме буквы алиф, обозначает один согласный. Начертание букв меняется в зависимости от расположения внутри слова (в начале, в конце или в середине). Все буквы одного слова пишутся слитно, за исключением шести букв (алиф, даль, заль, ра, зайн, вав), которые не соединяются со следующей буквой.
+    .table-responsive
+      %table.table.table-striped.table-hover.table-condensed.table-bordered
+        %thead
+          %tr
+            %th= t(:nr)
+            %th= t(:in_the_end)
+            %th= t(:in_the_middle)
+            %th= t(:in_the_beginning)
+            %th= t(:separate)
+            %th{ :colspan => 2 }= t(:name)
+            %th= t(:transcription)
+            %th= t(:numerical_value)
+        %tbody
+          - @alphabet.each do |a|
+            %tr
+              %th{ :scope => 'row' }= a.nr
+              - if a.has_all_writings?
+                %td.ar.danger= a.in_the_end
+                %td.ar.warning= a.in_the_middle
+                %td.ar.success= a.in_the_beginning
+                %td.ar.info= a.letter
+              - else
+                %td.ar.warning{ :colspan => 2 }= a.in_the_end
+                %td.ar.info{ :colspan => 2 }= a.letter
+              %td.ar
+                = a.ar_name
+                %p.transcription= a.ar_name_transcription
+              %td= a.name
+              %td.ar
+                %p.transcription= a.transcription
+              %td= a.nv
