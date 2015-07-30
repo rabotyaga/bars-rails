@@ -64,6 +64,7 @@ Ra::Application.configure do
   config.assets.precompile << "ra-keyboard.js"
   config.assets.precompile << "ra-keyboard.css"
   config.assets.precompile << "articles.css"
+  config.assets.precompile << "alphabet.js"
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
