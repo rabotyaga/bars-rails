@@ -102,3 +102,8 @@ table.with-footer {
 #sidebar > ul.nav > li > a:hover {
   background-color: #fff;
 }
+
+table > tbody > tr.root > td {
+  text-align: center;
+  background-color: #b39ddb;
+}

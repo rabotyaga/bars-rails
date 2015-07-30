@@ -3,15 +3,19 @@
 %table.table.table-striped.table-bordered.table-hover.table-condensed.with-footer
   %thead
     %tr
-      %th= t(:root)
       %th= t(:ar_inf)
       %th{ :colspan => 4 }
       %th= t(:translation)
   %tbody
+    - previous_root = ""
     - @articles.each do |article|
+      - if previous_root != article.root
+        - previous_root = article.root
+        %tr.root
+          %td{ :colspan => 7 }
+            = t(:root) + " "
+            = article.root
       %tr{ :class => (params[:q] == article.ar_inf_wo_vowels ? 'success' : (article.is_original ? '' : 'info')) }
-        %td.ar
-          = link_to article.root, articles_path(:id => article.root_id)
         %td.ar
           = link_to article.ar_inf, articles_path(:id => article.id)
           %p.transcription= article.transcription
