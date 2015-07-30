@@ -18,7 +18,7 @@
         %th
   %tbody
     - @all_articles.each do |article|
-      %tr{ :class => (@article == article ? 'success' : (article.is_original ? '' : 'info')) }
+      %tr{ :class => (@article == article ? 'success' : (article.is_original ? '' : 'info')), :id => article.id }
         %td.ar
           = article.ar_inf
           %p.transcription= article.transcription
@@ -41,3 +41,8 @@
               = link_to t(:delete), article_path(article), method: :delete, data: { confirm: t(:are_you_sure?)}, class: "btn btn-xs btn-danger"
 %nav
   = paginate @articles
+- if @article
+  :javascript
+    $('html,body').animate({
+    scrollTop: $('##{@article.id}').offset().top - $('table').offset().top + $('table').scrollTop()
+    });
