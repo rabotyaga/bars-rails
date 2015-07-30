@@ -13,7 +13,6 @@
         - previous_root = article.root
         %tr.root
           %td{ :colspan => 7 }
-            = t(:root) + " "
             = article.root
       %tr{ :class => (params[:q] == article.ar_inf_wo_vowels ? 'success' : (article.is_original ? '' : 'info')) }
         %td.ar
