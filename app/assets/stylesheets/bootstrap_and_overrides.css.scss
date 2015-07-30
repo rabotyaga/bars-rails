@@ -3,6 +3,7 @@
 
 body {
   padding-top: 60px;
+  position: relative;
 }
 
 .nav > li > a {
@@ -41,13 +42,15 @@ input.ar {
   height: 26px;
 }
 
-table td.ar {
+table td.ar, span.ar {
   font-size: 24px;
+  color: #00695c;
 }
 table td.ar p.transcription {
   font-size: 16px;
   font-style: italic;
   padding-top: 5px;
+  color: #000;
 }
 table td {
   font-size: 16px;
@@ -75,4 +78,27 @@ table.with-footer {
 
 .btn-group {
   margin: 20px 20px 0px 20px;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th {
+  vertical-align: middle;
+}
+
+.anchor:before {
+  content: "";
+  display: block;
+  height: 60px;
+  margin: -50px 0 0;
+}
+
+#sidebar > ul.nav > li.active > a {
+  font-weight: 500;
+  background-color: #d9edf7;
+  &:hover {
+    background-color: #d9edf7;
+  }
+}
+
+#sidebar > ul.nav > li > a:hover {
+  background-color: #fff;
 }
