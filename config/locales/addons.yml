@@ -17,7 +17,7 @@ ru:
   separate: "отдельно"
   name: "название"
   transcription: "транскрипция"
-  numerical_value: "цифровое значение"
+  numerical_value: "числовое значение"
   nr: "#"
 
   search: "Поиск"
