@@ -10,16 +10,11 @@
     %a{ :href => 'https://itunes.apple.com/ru/app/bol-soj-arabsko-russkij-slovar/id1021251680?mt=8' }
       %img{ :alt => 'Загрузите в App Store', :src => '/assets/app_store_badge.svg' }
 .text-center.row
-  .col-md-6.col-md-offset-3.text-left
+  .col-md-6.col-md-offset-3.padding-top-bottom
     :markdown
-      **[Версия для Android](https://play.google.com/store/apps/details?id=ru.rabotyaga.baranov) обновлена:**
+      **Вышла [версия для iOS](https://itunes.apple.com/ru/app/bol-soj-arabsko-russkij-slovar/id1021251680?mt=8) (iPhone/iPad/iPod touch)**
 
-        * добавлены транскрипции;
-        * добавлена возможность перелистывания словаря по корням вперед/назад;
-        * результаты поиска сортируются по релевантности;
-        * упрощен поиск для хамзованных букв: при вводе простого алифа находится также алиф-мадда, алиф-хамза; при вводе вав находится также и вав-хамза; при вводе алиф-максура находится также и йа-хамза;
-        * корректировки в базе данных: исправление опечаток, порядка слов;
-        * поиск стал работать быстрее.
+      **[Версия для Android](https://play.google.com/store/apps/details?id=ru.rabotyaga.baranov) обновлена**
   .col-md-8.col-md-offset-2
     = form_tag("/search", method: "get") do
       .input-group.input-group-lg
