@@ -12,8 +12,8 @@ class IndexController < ApplicationController
 
     if params[:search_type] == 'exact'
       if params[:input_lang] == "ru"
-        req += "LIKE ?"
-        param = "% #{params[:q]} %"
+        req += "= :p1 OR translation LIKE :p2 OR translation LIKE :p3 OR translation LIKE :p4 OR translation LIKE :p5 OR translation LIKE :p6 OR translation LIKE :p7 OR translation LIKE :p8"
+        param = { p1: params[:q], p2: "#{params[:q]} %", p3: "% #{params[:q]}", p4: "% #{params[:q]};%", p5: "% #{params[:q]} %", p6: "% #{params[:q]}!%", p7: "% #{params[:q]}.%", p8: "% #{params[:q]},%" }
       else
         req += "= ?"
         param = Article.remove_vowels_n_hamza(params[:q])
