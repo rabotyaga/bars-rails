@@ -14,7 +14,7 @@
         %tr.root
           %td{ :colspan => 7 }
             = article.root
-      %tr{ :class => (params[:q] == article.ar_inf_wo_vowels ? 'success' : (article.is_original ? '' : 'info')) }
+      %tr{ :class => (params[:q] == article.ar_inf_wo_vowels ? 'success' : '') }
         %td.ar
           = link_to article.ar_inf, articles_path(:id => article.id)
           %p.transcription= article.transcription
