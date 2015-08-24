@@ -34,4 +34,8 @@ class IndexController < ApplicationController
     render :json => list
   end
 
+  def blagodarnost
+
+  end
+
 end

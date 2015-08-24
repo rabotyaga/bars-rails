@@ -11,6 +11,7 @@ Ra::Application.routes.draw do
 
   get 'search' => 'index#search'
   get 'autocomplete' => 'index#autocomplete'
+  get 'blagodarnost' => 'index#blagodarnost'
 
   get '/m/:path', to: redirect('/%{path}')
   get '/m/', to: redirect('/')
