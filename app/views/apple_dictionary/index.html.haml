@@ -1,0 +1,15 @@
+- content_for :title, t(:apple_dictionary_title)
+- content_for :description, t(:apple_dictionary_description)
+.text-center.row
+  .col-md-10.col-md-offset-1
+    %h3 Большой арабско-русский словарь
+    %h4 с транскрипциями
+    %h5 Версия для Apple Dictionary
+    .text-left
+      :markdown
+        1. [Скачайте архив](https://s3.eu-central-1.amazonaws.com/bars-dictionary/%D0%91%D0%90%D0%A0%D0%A1.dictionary.zip) (~7.5Мб)
+        2. Распакуйте и поместите папку БАРС.dictionary в ~/Library/Dictionaries/ (можно запустить Dictionary.app и выбрать в меню File -> Open Dictionaries Folder и перетащить в открывшееся окно БАРС.dictionary)
+        3. Запустите Dictionary.app, в меню Dictionary -> Preferences, поставьте галочку напротив словаря БАРС в самом низу списка
+
+        Любые вопросы, пожелания и предложения пишите на [bars.dictionary@gmail.com](mailto:bars.dictionary@gmail.com)
+%em 24/08/2015

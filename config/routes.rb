@@ -19,6 +19,7 @@ Ra::Application.routes.draw do
 
   resources :alphabet, only: [:index]
   resources :about, only: [:index]
+  resources :apple_dictionary, only: [:index]
 
   resources :accounts, only: [:index, :update]
   resources :logs, only: [:index]

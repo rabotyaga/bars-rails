@@ -1,0 +1,2 @@
+class AppleDictionaryController < ApplicationController
+end
