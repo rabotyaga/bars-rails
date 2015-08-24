@@ -1,4 +1,6 @@
 %ul.nav.navbar-nav
+  %li.logo
+    = image_tag 'logo40.png'
   %li{ :class => (params[:controller] == "alphabet" ? 'active' : '') }
     = link_to t(:alphabet), alphabet_index_path
   %li{ :class => (params[:controller] == "index" ? 'active' : '') }
