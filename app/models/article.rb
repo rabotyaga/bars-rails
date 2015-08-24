@@ -198,4 +198,91 @@ class Article < ActiveRecord::Base
   def self.remove_vowels_n_hamza(string)
     self.remove_hamza(self.remove_vowels(string))
   end
+
+  def self.dump_dictionary_xml
+    Article.where(:is_root => true).all.each do |ra|
+
+      puts "<d:entry id=\"#{ra.id}\" d:title=\"#{ra.ar_inf}\">"
+
+        puts "  <d:index d:value=\"#{ra.ar_inf}\" d:title=\"#{ra.ar_inf}\" d:anchor=\"xpointer(//*[@id='#{ra.id}'])\" />"
+
+        if ra.ar_inf_wo_vowels_n_hamza != ra.ar_inf
+          puts "  <d:index d:value=\"#{ra.ar_inf_wo_vowels_n_hamza}\" d:title=\"#{ra.ar_inf}\" d:anchor=\"xpointer(//*[@id='#{ra.id}'])\" />"
+        end
+
+        puts "  <div id=\"#{ra.id}\" class=\"article\">"
+
+        puts "    <div class=\"root\"><h1>#{ra.root}</h1></div>"
+
+        if ra.ar_inf !~ /^\(.*\)$/
+          puts "    <div class=\"ar_inf\"><h2>#{ra.ar_inf}</h2></div>"
+        end
+
+        if !ra.transcription.nil? && !ra.transcription.empty?
+          puts "    <div d:pr=\"1\" class=\"transcription\">#{ra.transcription}</div>"
+        end
+
+        if !ra.form.nil? && !ra.form.empty?
+          puts "    <div class=\"form\">#{ra.form}</div>"
+        end
+
+        if !ra.vocalization.nil? && !ra.vocalization.empty?
+          puts "    <div class=\"vocalization\">#{ra.vocalization}</div>"
+        end
+
+        if !ra.opts.nil? && !ra.opts.empty?
+          puts "    <div class=\"opts\">#{ra.opts}</div>"
+        end
+
+        if !ra.homonym_nr.nil?
+          puts "    <div class=\"homonym_nr\">#{ra.homonym_nr}</div>"
+        end
+
+        if !ra.translation.nil? && !ra.translation.empty?
+          puts "    <div class=\"translation\">#{ra.translation}</div>"
+        end
+
+        puts "  </div>"
+      ra.sub_articles.each do |a|
+
+        puts "  <d:index d:value=\"#{a.ar_inf}\" d:title=\"#{a.ar_inf}\" d:anchor=\"xpointer(//*[@id='#{a.id}'])\" />"
+
+        if a.ar_inf_wo_vowels_n_hamza != a.ar_inf
+          puts "  <d:index d:value=\"#{a.ar_inf_wo_vowels_n_hamza}\" d:title=\"#{a.ar_inf}\" d:anchor=\"xpointer(//*[@id='#{a.id}'])\" />"
+        end
+
+        puts "  <div id=\"#{a.id}\" class=\"article\">"
+
+        puts "    <div class=\"ar_inf\"><h2>#{a.ar_inf}</h2></div>"
+
+        if !a.transcription.nil? && !a.transcription.empty?
+          puts "    <div d:pr=\"1\" class=\"transcirption\">#{a.transcription}</div>"
+        end
+
+        if !a.form.nil? && !a.form.empty?
+          puts "    <div class=\"form\">#{a.form}</div>"
+        end
+
+        if !a.vocalization.nil? && !a.vocalization.empty?
+          puts "    `<div class=\"vocalization\">#{a.vocalization}</div>"
+        end
+
+        if !a.opts.nil? && !a.opts.empty?
+          puts "    <div class=\"opts\">#{a.opts}</div>"
+        end
+
+        if !a.homonym_nr.nil?
+          puts "    <div class=\"homonym_nr\">#{a.homonym_nr}</div>"
+        end
+
+        if !a.translation.nil? && !a.translation.empty?
+          puts "    <div class=\"translation\">#{a.translation}</div>"
+        end
+
+        puts "  </div>"
+      end
+      puts "</d:entry>"
+    end
+  end
+
 end
