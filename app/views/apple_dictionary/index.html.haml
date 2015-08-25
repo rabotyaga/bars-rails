@@ -4,8 +4,8 @@
   .col-md-10.col-md-offset-1
     %h3 Большой арабско-русский словарь
     %h4 с транскрипциями
-    %h5 Версия для Apple Dictionary
     .text-left
+      %h4 Версия для Apple Dictionary
       :markdown
         1. [Скачайте архив](https://s3.eu-central-1.amazonaws.com/bars-dictionary/%D0%91%D0%90%D0%A0%D0%A1.dictionary.zip) (~7.5Мб)
         2. Распакуйте и поместите папку БАРС.dictionary в ~/Library/Dictionaries/ (можно запустить Dictionary.app, выбрать в меню File -> Open Dictionaries Folder и перетащить в открывшееся окно БАРС.dictionary)
@@ -13,3 +13,5 @@
 
         Любые вопросы, пожелания и предложения пишите на [bars.dictionary@gmail.com](mailto:bars.dictionary@gmail.com)
 %em 24/08/2015
+.text-center.row
+  = render 'index/yandex_support'
