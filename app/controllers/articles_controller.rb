@@ -89,7 +89,7 @@ class ArticlesController < ApplicationController
       dup = @article.dup
       if @article.update(article_params)
         diff = {}
-        for attr in [:nr, :ar_inf, :ar_inf_wo_vowels, :translation, :is_original, :source, :page, :is_root, :form, :opt, :mn1, :ar1, :mn2, :ar2, :mn3, :ar3]
+        for attr in [:nr, :ar_inf, :ar_inf_wo_vowels, :transcription, :translation, :is_original, :source, :page, :is_root, :form, :opt, :mn1, :ar1, :mn2, :ar2, :mn3, :ar3, :vocalization, :homonym_nr]
           if @article[attr] != dup[attr]
             diff.merge!({ attr => { :old => dup[attr], :new => @article[attr] } })
           end
@@ -130,6 +130,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:nr, :is_root, :ar_inf, :is_original, :source, :page, :form, :opt, :mn1, :ar1, :mn2, :ar2, :mn3, :ar3, :translation)
+      params.require(:article).permit(:nr, :is_root, :ar_inf, :is_original, :source, :page, :form, :opt, :mn1, :ar1, :mn2, :ar2, :mn3, :ar3, :translation, :transcription, :vocalization, :homonym_nr)
     end
 end
