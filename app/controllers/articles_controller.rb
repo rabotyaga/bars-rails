@@ -130,6 +130,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:nr, :is_root, :ar_inf, :is_original, :source, :page, :form, :opt, :mn1, :ar1, :mn2, :ar2, :mn3, :ar3, :translation, :transcription, :vocalization, :homonym_nr)
+      params.require(:article).permit(:nr, :is_root, :ar_inf, :is_original, :source, :page, :form, :opt, :mn1, :ar1, :mn2, :ar2, :mn3, :ar3, :translation, :translation_dfc, :transcription, :vocalization, :homonym_nr)
     end
 end

@@ -24,7 +24,7 @@
           = f.input :ar2, input_html: { class: 'ar' }
           = f.input :mn3
           = f.input :ar3, input_html: { class: 'ar' }
-  = f.input :translation
+  = f.input :translation_dfc, as: :text
   - if params[:after_id]
     = hidden_field_tag 'after_id', params[:after_id]
   = f.button :submit, :class => 'btn-primary'

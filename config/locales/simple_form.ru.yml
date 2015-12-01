@@ -36,6 +36,7 @@ ru:
         form: "Порода глагола"
         opt: "Опции"
         translation: "Перевод"
+        translation_dfc: "Перевод"
         notes: "Примечения"
     hints:
       defaults:

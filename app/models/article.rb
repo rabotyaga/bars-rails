@@ -10,6 +10,7 @@ class Article < ActiveRecord::Base
 
   before_save do |a|
     a.ar_inf_wo_vowels = Article.remove_vowels(a.ar_inf)
+    a.ar_inf_wo_vowels_n_hamza = Article.remove_hamza(a.ar_inf_wo_vowels)
   end
 
   after_create do |a|
@@ -197,6 +198,22 @@ class Article < ActiveRecord::Base
 
   def self.remove_vowels_n_hamza(string)
     self.remove_hamza(self.remove_vowels(string))
+  end
+
+  def self.show_dfc(string)
+    string.gsub(/\u202a/, "<LRE>").gsub(/\u202b/, "<RLE>").gsub(/\u202c/, "<PDF>").gsub(/\u202d/, "<LRO>").gsub(/\u202e/, "<RLO>")
+  end
+
+  def self.hide_dfc(string)
+    string.gsub(/<LRE>/, "\u202a").gsub(/<RLE>/, "\u202b").gsub(/<PDF>/, "\u202c").gsub(/<LRO>/, "\u202d").gsub(/<RLO>/, "\u202e")
+  end
+
+  def translation_dfc
+    Article.show_dfc(translation)
+  end
+
+  def translation_dfc=(string)
+    self.translation=Article.hide_dfc(string)
   end
 
   def self.dump_dictionary_xml
