@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729133126) do
+ActiveRecord::Schema.define(version: 20151127124619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20150729133126) do
     t.string   "ar_name"
     t.string   "ar_name_transcription"
     t.boolean  "has_all_writings"
-    t.boolean  "has_nr"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end
@@ -62,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150729133126) do
     t.string   "vocalization",             limit: 255
     t.integer  "homonym_nr"
     t.string   "ar_inf_wo_vowels_n_hamza", limit: 255
+    t.string   "ar123_wo_vowels_n_hamza"
   end
 
   add_index "articles", ["first_letter_id"], name: "index_articles_on_first_letter_id", using: :btree

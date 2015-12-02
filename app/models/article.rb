@@ -188,6 +188,31 @@ class Article < ActiveRecord::Base
     end
   end
 
+  def self.fill_in_ar123
+    Article.all.each do |a|
+      if !a.ar1.empty?
+        a.ar123_wo_vowels_n_hamza = Article.remove_vowels_n_hamza(a.ar1)
+      end
+      if !a.ar2.empty?
+        if a.ar123_wo_vowels_n_hamza.nil?
+          a.ar123_wo_vowels_n_hamza = ""
+        elsif !a.ar123_wo_vowels_n_hamza.empty?
+          a.ar123_wo_vowels_n_hamza += " "
+        end
+        a.ar123_wo_vowels_n_hamza += Article.remove_vowels_n_hamza(a.ar2)
+      end
+      if !a.ar3.empty?
+        if a.ar123_wo_vowels_n_hamza.nil?
+          a.ar123_wo_vowels_n_hamza = ""
+        elsif !a.ar123_wo_vowels_n_hamza.empty?
+          a.ar123_wo_vowels_n_hamza += " "
+        end
+        a.ar123_wo_vowels_n_hamza += Article.remove_vowels_n_hamza(a.ar3)
+      end
+      a.save
+    end
+  end
+
   def self.remove_vowels(string)
     string.gsub(/[\u064b\u064c\u064d\u064e\u064f\u0650\u0651\u0652\u0653\u0670]/,'')
   end
