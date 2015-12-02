@@ -15,12 +15,16 @@ class IndexController < ApplicationController
         req += "= :p1 OR translation LIKE :p2 OR translation LIKE :p3 OR translation LIKE :p4 OR translation LIKE :p5 OR translation LIKE :p6 OR translation LIKE :p7 OR translation LIKE :p8"
         param = { p1: params[:q], p2: "#{params[:q]} %", p3: "% #{params[:q]}", p4: "% #{params[:q]};%", p5: "% #{params[:q]} %", p6: "% #{params[:q]}!%", p7: "% #{params[:q]}.%", p8: "% #{params[:q]},%" }
       else
-        req += "= ?"
-        param = Article.remove_vowels_n_hamza(params[:q])
+        req += "= :p1 OR ar123_wo_vowels_n_hamza = :p1 OR ar123_wo_vowels_n_hamza LIKE :p2 OR ar123_wo_vowels_n_hamza LIKE :p3 OR ar123_wo_vowels_n_hamza LIKE :p4"
+        param = { p1: Article.remove_vowels_n_hamza(params[:q]), p2: "#{Article.remove_vowels_n_hamza(params[:q])} %", p3: "% #{Article.remove_vowels_n_hamza(params[:q])}", p4: "% #{Article.remove_vowels_n_hamza(params[:q])} %" }
       end
     else
-      req += "LIKE ?"
-      param = "%#{Article.remove_vowels_n_hamza(params[:q])}%"
+      if params[:input_lang] == "ru"
+        req += "LIKE :p1"
+      else
+        req += "LIKE :p1 OR ar123_wo_vowels_n_hamza LIKE :p1"
+      end
+      param = { p1: "%#{Article.remove_vowels_n_hamza(params[:q])}%" }
     end
     @results_count = Article.where([req, param]).where(["ar_inf NOT LIKE ?", "(%)"]).count.to_s
     @articles = Article.where([req, param]).where(["ar_inf NOT LIKE ?", "(%)"]).page(params[:page])
