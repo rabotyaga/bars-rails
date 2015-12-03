@@ -11,6 +11,7 @@ class Article < ActiveRecord::Base
   before_save do |a|
     a.ar_inf_wo_vowels = Article.remove_vowels(a.ar_inf)
     a.ar_inf_wo_vowels_n_hamza = Article.remove_hamza(a.ar_inf_wo_vowels)
+    a.translation.gsub!(/\r/, "")
   end
 
   after_create do |a|
