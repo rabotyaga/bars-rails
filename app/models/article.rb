@@ -253,6 +253,16 @@ class Article < ActiveRecord::Base
           puts "  <d:index d:value=\"#{ra.ar_inf_wo_vowels_n_hamza}\" d:title=\"#{ra.ar_inf}\" d:anchor=\"xpointer(//*[@id='#{ra.id}'])\" />"
         end
 
+        if !ra.ar1.empty?
+          puts "  <d:index d:value=\"#{Article.remove_vowels_n_hamza(ra.ar1)}\" d:title=\"#{ra.ar1}\" d:anchor=\"xpointer(//*[@id='#{ra.id}'])\" />"
+        end
+        if !ra.ar2.empty?
+          puts "  <d:index d:value=\"#{Article.remove_vowels_n_hamza(ra.ar2)}\" d:title=\"#{ra.ar2}\" d:anchor=\"xpointer(//*[@id='#{ra.id}'])\" />"
+        end
+        if !ra.ar3.empty?
+          puts "  <d:index d:value=\"#{Article.remove_vowels_n_hamza(ra.ar3)}\" d:title=\"#{ra.ar3}\" d:anchor=\"xpointer(//*[@id='#{ra.id}'])\" />"
+        end
+
         puts "  <div id=\"#{ra.id}\" class=\"article\">"
 
         puts "    <div class=\"root\"><h1>#{ra.root}</h1></div>"
@@ -292,6 +302,15 @@ class Article < ActiveRecord::Base
 
         if a.ar_inf_wo_vowels_n_hamza != a.ar_inf
           puts "  <d:index d:value=\"#{a.ar_inf_wo_vowels_n_hamza}\" d:title=\"#{a.ar_inf}\" d:anchor=\"xpointer(//*[@id='#{a.id}'])\" />"
+        end
+        if !a.ar1.empty?
+          puts "  <d:index d:value=\"#{Article.remove_vowels_n_hamza(a.ar1)}\" d:title=\"#{a.ar1}\" d:anchor=\"xpointer(//*[@id='#{a.id}'])\" />"
+        end
+        if !a.ar2.empty?
+          puts "  <d:index d:value=\"#{Article.remove_vowels_n_hamza(a.ar2)}\" d:title=\"#{a.ar2}\" d:anchor=\"xpointer(//*[@id='#{a.id}'])\" />"
+        end
+        if !a.ar3.empty?
+          puts "  <d:index d:value=\"#{Article.remove_vowels_n_hamza(a.ar3)}\" d:title=\"#{a.ar3}\" d:anchor=\"xpointer(//*[@id='#{a.id}'])\" />"
         end
 
         puts "  <div id=\"#{a.id}\" class=\"article\">"
