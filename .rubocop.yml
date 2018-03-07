@@ -1,0 +1,23 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+      - db/schema.rb
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Max: 17
+
+Metrics/MethodLength:
+  Max: 20
+
+Documentation:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - bin/update
+    - bin/setup
+
+require: rubocop-rspec

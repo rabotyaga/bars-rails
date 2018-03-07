@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateAlphabets < ActiveRecord::Migration
   def change
     create_table :alphabets do |t|

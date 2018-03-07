@@ -1,4 +1,6 @@
-class User < ActiveRecord::Base
+# frozen_string_literal: true
+
+class User < ApplicationRecord
   default_scope { order(:created_at) }
 
   # Include default devise modules. Others available are:
@@ -10,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :logs
 
   def active_for_authentication?
-    return super && active?
+    super && active?
   end
 
   def can_any

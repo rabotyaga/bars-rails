@@ -1,9 +1,10 @@
-Ra::Application.routes.draw do
+# frozen_string_literal: true
 
-  #resources :alphabets
+Rails.application.routes.draw do
+  # resources :alphabets
 
   devise_for :users
-  resources :articles, only: [:index, :edit, :update, :new, :create, :destroy] do
+  resources :articles, only: %i[index edit update new create destroy] do
     # collection { post :import }
     # collection { get :offline }
   end
@@ -22,7 +23,7 @@ Ra::Application.routes.draw do
   resources :about, only: [:index]
   resources :apple_dictionary, only: [:index]
 
-  resources :accounts, only: [:index, :update]
+  resources :accounts, only: %i[index update]
   resources :logs, only: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.

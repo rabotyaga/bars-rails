@@ -1,5 +1,7 @@
-class Log < ActiveRecord::Base
-  default_scope { order("created_at DESC") }
+# frozen_string_literal: true
+
+class Log < ApplicationRecord
+  default_scope { order('created_at DESC') }
 
   belongs_to :user
   belongs_to :article

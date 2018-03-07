@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 class LogsController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   def index
-    if current_user.try(:is_admin?)
-      @logs = Log.all.page(params[:page])
-    else
-      @logs = current_user.logs.page(params[:page])
-    end
+    @logs = if current_user.try(:is_admin?)
+              Log.all.page(params[:page])
+            else
+              current_user.logs.page(params[:page])
+            end
   end
-
 end

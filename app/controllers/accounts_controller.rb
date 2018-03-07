@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class AccountsController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter do
+  before_action :authenticate_user!
+  before_action do
     redirect_to root_path unless current_user.try(:is_admin?)
   end
 
@@ -22,6 +24,7 @@ class AccountsController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:active, :can_edit, :can_add, :can_delete)
   end

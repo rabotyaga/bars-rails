@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateActions < ActiveRecord::Migration
   def change
     create_table :actions do |t|
@@ -5,8 +7,8 @@ class CreateActions < ActiveRecord::Migration
 
       t.timestamps
     end
-    Action.create(:name => "Создание")
-    Action.create(:name => "Изменение")
-    Action.create(:name => "Удаление")
+    Action.create(name: 'Создание')
+    Action.create(name: 'Изменение')
+    Action.create(name: 'Удаление')
   end
 end

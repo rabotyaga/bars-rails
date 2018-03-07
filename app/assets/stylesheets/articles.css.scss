@@ -1,27 +1,31 @@
+$color-bg: #f9f9f9;
+$color-border: #d4d4d4;
+
+
 body {
   padding-top: 90px;
 }
 
-.navbar-fixed-top2 > .nav > li > a {
-  font-size: 24px;
-  line-height: 0.8;
-}
-
 .navbar-fixed-top2 {
+  background-color: $color-bg;
+  border: 1px solid $color-border;
+  left: 0;
+  margin-top: -35px;
   position: fixed;
   right: 0;
-  left: 0;
   top: 70px;
-  background-color: #f9f9f9;
   width: 100%;
-  margin-top: -35px;
-  border: 1px solid #d4d4d4;
-}
 
-.navbar-fixed-top2 > .nav {
-  margin-top: 20px;
-  margin-left: 5px;
-  margin-bottom: 5px;
+  > .nav {
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-top: 20px;
+
+    > li > a {
+      font-size: 24px;
+      line-height: .8;
+    }
+  }
 }
 
 @media (max-width: 1300px) {

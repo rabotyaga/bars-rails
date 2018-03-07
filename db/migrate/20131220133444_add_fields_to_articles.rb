@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddFieldsToArticles < ActiveRecord::Migration
   def change
     add_column :articles, :page, :integer

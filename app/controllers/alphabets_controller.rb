@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AlphabetsController < ApplicationController
-  before_action :set_alphabet, only: [:show, :edit, :update, :destroy]
+  before_action :set_alphabet, only: %i[show edit update destroy]
 
   # GET /alphabets
   # GET /alphabets.json
@@ -9,8 +11,7 @@ class AlphabetsController < ApplicationController
 
   # GET /alphabets/1
   # GET /alphabets/1.json
-  def show
-  end
+  def show; end
 
   # GET /alphabets/new
   def new
@@ -18,8 +19,7 @@ class AlphabetsController < ApplicationController
   end
 
   # GET /alphabets/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /alphabets
   # POST /alphabets.json
@@ -62,13 +62,14 @@ class AlphabetsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_alphabet
-      @alphabet = Alphabet.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def alphabet_params
-      params.require(:alphabet).permit(:nr, :letter, :nv, :name, :transcription, :ar_name, :ar_name_transcription, :has_all_writings)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_alphabet
+    @alphabet = Alphabet.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def alphabet_params
+    params.require(:alphabet).permit(:nr, :letter, :nv, :name, :transcription, :ar_name, :ar_name_transcription, :has_all_writings)
+  end
 end
