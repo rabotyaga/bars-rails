@@ -33,7 +33,11 @@ class IndexController < ApplicationController
   def autocomplete
     list = []
     if params[:term] && !params[:term].empty?
-      list = Article.where(['ar_inf_wo_vowels_n_hamza LIKE ?', "%#{Article.remove_vowels_n_hamza(params[:term])}%"]).where(['ar_inf NOT LIKE ?', '(%)']).select('id', 'ar_inf', 'ar_inf_wo_vowels', 'translation').map { |a| Hash[label: "#{a.ar_inf} - #{a.translation.truncate(30)}", value: a.ar_inf_wo_vowels] }
+      list = Article.where(['ar_inf_wo_vowels_n_hamza LIKE ?', "%#{Article.remove_vowels_n_hamza(params[:term])}%"])
+               .where(['ar_inf NOT LIKE ?', '(%)'])
+               .limit(100)
+               .select('id', 'ar_inf', 'ar_inf_wo_vowels', 'translation')
+               .map { |a| Hash[label: "#{a.ar_inf} - #{a.translation.truncate(30)}", value: a.ar_inf_wo_vowels] }
     end
     render json: list
   end
