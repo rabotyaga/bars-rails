@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'search' => 'index#search'
   get 'autocomplete' => 'index#autocomplete'
   get 'blagodarnost' => 'index#blagodarnost'
+  get 'privacy-policy' => 'index#privacy_policy'
 
   get '/m/:path', to: redirect('/%{path}')
   get '/m/', to: redirect('/')

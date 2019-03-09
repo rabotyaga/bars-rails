@@ -43,4 +43,6 @@ class IndexController < ApplicationController
   end
 
   def blagodarnost; end
+
+  def privacy_policy; end
 end
