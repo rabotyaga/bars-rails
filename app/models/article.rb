@@ -202,11 +202,27 @@ class Article < ApplicationRecord
   end
 
   def self.show_dfc(string)
-    string.gsub(/\u202a/, '<LRE>').gsub(/\u202b/, '<RLE>').gsub(/\u202c/, '<PDF>').gsub(/\u202d/, '<LRO>').gsub(/\u202e/, '<RLO>')
+    string
+      .gsub(/\u2066/, '<LRI>')
+      .gsub(/\u2067/, '<RLI>')
+      .gsub(/\u2069/, '<PDI>')
+      .gsub(/\u202a/, '<LRE>')
+      .gsub(/\u202b/, '<RLE>')
+      .gsub(/\u202c/, '<PDF>')
+      .gsub(/\u202d/, '<LRO>')
+      .gsub(/\u202e/, '<RLO>')
   end
 
   def self.hide_dfc(string)
-    string.gsub(/<LRE>/, "\u202a").gsub(/<RLE>/, "\u202b").gsub(/<PDF>/, "\u202c").gsub(/<LRO>/, "\u202d").gsub(/<RLO>/, "\u202e")
+    string
+      .gsub(/<LRI>/, "\u2066")
+      .gsub(/<RLI>/, "\u2067")
+      .gsub(/<PDI>/, "\u2069")
+      .gsub(/<LRE>/, "\u202a")
+      .gsub(/<RLE>/, "\u202b")
+      .gsub(/<PDF>/, "\u202c")
+      .gsub(/<LRO>/, "\u202d")
+      .gsub(/<RLO>/, "\u202e")
   end
 
   def translation_dfc
